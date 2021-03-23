@@ -8,6 +8,7 @@
   --grey:#4e4e50;
   --primary-red:#c3073f;
   --primary-nojump: rgba(255,255,255,0);
+  --secondary-red:#5d001e;
 }
 
 body{
@@ -17,7 +18,8 @@ body{
 
 /*********************Navbar*****************************/
 .navbar{
-  background-color: #1a1a1d
+  background-color: #1a1a1d;
+  z-index: 2;
 }
 .logo{
   width:7rem;
@@ -38,9 +40,14 @@ nav ul li {
   border-top: 0.1875rem solid var(--primary-nojump);
 }
 .navbar-brand{
-  max-width: 17.25rem;
+  max-width: 7rem;
   padding: 0 i !important;
   height: 6rem im !important;
+}
+@media(max-width:768px){
+  .logo{
+    width:3rem;
+  }
 }
 
 .navbar-nav > li > a.active, .navbar-nav > li > a.active:focus{
@@ -50,4 +57,70 @@ nav ul li {
 
 .navbar-nav > li >a:hover{
   border-top: 0.1875rem solid var(--primary-red);
+}
+
+/*********************Header*****************************/
+.header-wrapper{
+  position: relative;
+  background: url(./assets/computer.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+.main-info{
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 1;
+}
+.main-info h1{
+  color: var(--primary-red);
+  text-transform: uppercase;
+}
+
+.typed-text{
+  font-size: 2rem;
+  color: var(--newtext);
+}
+@media(max-width:768px){
+  .main-info h1{
+    font-size: 1.7rem ;
+  }
+  .typed-text{
+    font-size: 1.2rem ;
+  }
+}
+.btn-main-offer{
+  border: 1px solid var(--primary-red);
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+  color: whitesmoke;
+  margin-top: 2rem;
+}
+.btn-main-offer:hover{
+  text-decoration: none;
+  background-color: var(--secondary-red);
+  color: whitesmoke;
+  transition: .2 ease-in-out;
+}
+/*********************particles*****************************/
+.tsparticles-canvas-el{
+  position: absolute;
+  height: 100vh;
+  width: 100vh;
+  z-index: 1;
+}
+@media(max-width:768px){
+  .particles-canvas{
+    display: none ;
+  }
 }
